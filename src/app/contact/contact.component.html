@@ -1,0 +1,115 @@
+<section class="contact pb-4">
+  <!-- header name  -->
+  <div data-aos="fade-up" data-aos-duration="1000" class="py-4">
+    <h3 class="display-7 text-dark contact__header-name">Contact</h3>
+  </div>
+  <!-- contact info content  -->
+  <section data-aos="fade-up" data-aos-duration="1000" class="container pb-4">
+    <div class="row row-cols-md-2 contact__content row-cols-1 py-2 bg-info text-dark">
+      <form [formGroup]="sendEmailForm" novalidate>
+        <div class="col mb-3">
+          <div class="row mb-3">
+            <div class="col-6">
+              <div class="d-flex flex-column">
+                <div>
+                  <label class="form-label">Your Name</label>
+                </div>
+                <div>
+                  <input class="form-control" name="user_name" formControlName="user_name" type="text"
+                    placeholder="Enter your name" required>
+                </div>
+                <div *ngIf="sendEmailForm.controls['user_name'].touched && sendEmailForm.controls['user_name'].invalid"
+                  class="text-danger">
+                  <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['user_name'].errors?.required">
+                    Your name is required
+                  </span>
+                  <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['user_name'].errors?.pattern">
+                    Invalid name! Only alphanumeric data is allowed.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex flex-column">
+                <div>
+                  <label class="form-label">Your Email</label>
+                </div>
+                <div>
+                  <input class="form-control" name="user_email" formControlName="user_email" type="email"
+                    placeholder="Enter your email">
+                </div>
+                <div
+                  *ngIf="sendEmailForm.controls['user_email'].touched && sendEmailForm.controls['user_email'].invalid"
+                  class="text-danger">
+                  <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['user_email'].errors?.required">
+                    Your email is required
+                  </span>
+                  <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['user_email'].errors?.email">
+                    Invalid email! Please provide valid email address.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="d-flex flex-column">
+              <div>
+                <label class="form-label">Message</label>
+              </div>
+              <div>
+                <textarea class="form-control" name="message" formControlName="message" name="" id="" cols="30"
+                  rows="10" placeholder="Type message"></textarea>
+              </div>
+              <div *ngIf="sendEmailForm.controls['message'].touched && sendEmailForm.controls['message'].invalid"
+                class="text-danger">
+                <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['message'].errors?.required">
+                  Message is required
+                </span>
+                <span style="font-size: 14px;" *ngIf="sendEmailForm.controls['message'].errors?.pattern">
+                  Invalid message! Only alphanumeric data is allowed.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <div class="me-3">
+                <button type="button" (click)="onResetForm()" class="btn btn-secondary text-white">Reset</button>
+              </div>
+              <div>
+                <button [disabled]="sendEmailForm.invalid" (click)="onSendEmail()" type="submit"
+                  class="btn btn-primary text-white">
+                  <span *ngIf="toggleButtonMessage" class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true"></span>
+                  {{toggleButtonMessage ? 'Please Wait' : 'Send Message'}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="col">
+        <div class="h-100 w-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122409.99753044774!2d80.57484392336089!3d16.510317725117066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1627664376869!5m2!1sen!2sin"
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<!-- toast message to show and hide  -->
+<div [ngClass]="toastMessageToggle === true ? 'show' : 'hide'" class="toast bg-light toast-position" role="alert"
+  aria-live="assertive" aria-atomic="true" style="z-index: 2">
+  <div [ngClass]="toastMessageSuccess ? 'bg-success' : 'bg-danger'" class="toast-header text-white">
+    <strong class="me-auto">Notification</strong>
+    <!-- <small>11 mins ago</small> -->
+    <button type="button" (click)="onClose()" style="border: none;" class="bg-transparent text-white"
+      data-bs-dismiss="toast" aria-label="Close">
+      <i class="bi bi-x" style="font-size: 1.2rem;"></i>
+    </button>
+  </div>
+  <div class="toast-body">
+    {{toastMessage}}
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.footer {
+  height: 150px;
+  padding: 0px 10px;
+  box-shadow: 0 0 10px rgb(59, 159, 221, 0.8);
+  margin-top: auto;
+}
+.content {
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 25vw;
+    height: 150px;
+  }
+}
+.social-links a {
+  display: inline-block;
+  padding: 8px 0px;
+  color: #3a9edd;
+  background: #fff;
+  font-size: 18px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+}
+.social-links a:hover {
+  color: #fff;
+  background: #dd7e3b;
+}

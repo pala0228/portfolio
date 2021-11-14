@@ -1,0 +1,30 @@
+<section class="about-me">
+  <!-- header name  -->
+  <div data-aos="fade-up" data-aos-duration="1000" class="py-4 about-me__margin-top-desktop">
+    <h3 class="display-7 text-dark about-me__header-name">About</h3>
+  </div>
+  <!-- content  -->
+  <div>
+    <p class="text-justify"><strong style="font-style: italic ; font-size: 1.2rem;">Kireeti</strong> here, have been
+      working as an IT
+      Analyst since 2014. The relevant
+      experience on web development is {{uiExperienceYear}}&nbsp;years
+      <span *ngIf="uiExperienceMonth > 0">{{uiExperienceMonth}}&nbsp;months.</span>
+      <span *ngIf="uiExperienceMonth === 0">.</span>
+      <span>&nbsp;I have worked on
+        projects in both
+        banking and
+        manufacturing domain.</span>
+    </p>
+    <p class="text-justify">
+      Addition to, i have also developed my personal projects to improve my technical
+      knowledge.
+    </p>
+  </div>
+  <div class="container">
+    <app-personal-info></app-personal-info>
+  </div>
+  <div class="py-2 ps-2 mt-1 bg-light">
+    <app-skills></app-skills>
+  </div>
+</section>

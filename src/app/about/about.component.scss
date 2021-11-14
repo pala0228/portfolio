@@ -1,0 +1,13 @@
+.about-me {
+  &__header-name {
+    color: #1e1e25;
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #3a9edd;
+  }
+  &__margin-top-desktop {
+    @media (min-width: 576px) {
+      margin-top: 4rem;
+    }
+  }
+}

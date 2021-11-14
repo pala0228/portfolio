@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+$theme-colors: (
+  "primary": #3a9edd,
+  "secondary": #dd7e3b,
+  "tertiary": #f0c6a8,
+  "dark": #1e1e25,
+  "info": #5fdcdd,
+  "light": #f4fafe,
+  "warning": #f8c146,
+  "custom-blue": #1e2e34,
+);
+// $theme-colors: (
+//   "primary": #0068b3,
+//   "secondary": $secondary,
+//   "success": $success,
+//   "info": $info,
+//   "warning": $warning,
+//   "danger": $danger,
+//   "light": $light,
+//   "dark": $dark,
+// );
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #dd7e3b !important;
+}
+.nav-pills .nav-link.active {
+  background-color: #dd7e3b !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";

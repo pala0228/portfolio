@@ -1,0 +1,20 @@
+.contact {
+  &__header-name {
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #3a9edd;
+  }
+  &__content {
+    box-shadow: 0 0 10px rgb(95, 220, 221, 0.8);
+  }
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.toast-position {
+  position: fixed;
+  top: 67px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

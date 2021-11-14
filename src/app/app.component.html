@@ -1,0 +1,34 @@
+<section class="app" id="downloadResume" style="background-color: #FDFFFF;">
+  <!-- header section  -->
+  <div id="scrollSpy" class="sticky-top">
+    <app-header></app-header>
+  </div>
+  <!-- content section  -->
+  <div (scroll)="onScroll($event)" class="d-flex flex-column scrollspy-content" data-bs-spy="scroll"
+    data-bs-target="#scrollSpy" data-bs-offset="0" tabindex="0">
+    <div class="d-flex flex-column container">
+      <div id="home">
+        <app-home></app-home>
+      </div>
+      <div id="about">
+        <app-about></app-about>
+      </div>
+      <div id="projects">
+        <app-projects></app-projects>
+      </div>
+      <div id="contact">
+        <app-contact></app-contact>
+      </div>
+    </div>
+    <!-- footer section  -->
+    <div>
+      <app-footer></app-footer>
+    </div>
+    <!-- icon to travel back to top -->
+    <div data-aos="fade-out"
+      [ngStyle]="{'visibility' : scrolledDown ? 'visible' : 'hidden', 'opacity' : scrolledDown ? '1' : '0' }"
+      class="back-to-top d-flex align-items-center justify-content-center">
+      <a href="#home"><i class="bi bi-arrow-up-short"></i></a>
+    </div>
+  </div>
+</section>
